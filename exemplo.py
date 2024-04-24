@@ -54,6 +54,49 @@ def filtrar_acima_de_10(valores_limite: List[float], limite: float) -> List[floa
             resultado.append(valor)
     return resultado
 
-resultado_acima_limite = filtrar_acima_de_10(valores_limite)
+resultado_acima_limite = filtrar_acima_de_10(valores_limite, limite)
 
 print(resultado_acima_limite)
+
+
+# Função para contar valores únicos numa lista.
+
+lista_valores_unicos = [1,2,2,3,4,5,5,5,5,7,7,9]
+
+def contar_valores_unicos(lista_valores_unicos: List[int]) -> int:
+    return len(set(lista_valores_unicos))
+
+resultado_valores_unicos = contar_valores_unicos(lista_valores_unicos)
+
+print(f"A quantidade de valores únicos é {resultado_valores_unicos}.")
+
+# Função de conversão de celcius para fahrenheit.
+
+temp_celsius = [15,16,20,25,30,35]
+
+def celsius_para_fahrenheit(temp_celsius: List[float]) -> List[float]:
+    """
+    Essa é uma função simples de conversão de temperatura de Fahrenheit para Celsius.
+    """
+    return [(9/5) * temp + 32 for temp in temp_celsius]
+
+temp_em_fahrenheit = celsius_para_fahrenheit(temp_celsius)
+
+print(temp_em_fahrenheit)
+
+# Função de cálculo de desvio padrão.
+
+valores_dp = [5,10,15,20]
+
+def calcular_desvio_padrao(valores_dp: List[float]) -> float:
+    """
+    Função básica para o cálculo de desvio padrão.
+    """
+    media = sum(valores_dp) / len(valores_dp)
+    variancia = sum((x - media) ** 2 for x in valores_dp) / len(valores_dp)
+    return variancia ** 0.5
+
+resultado_desvio_padrao = calcular_desvio_padrao(valores_dp)
+
+print(resultado_desvio_padrao)
+
