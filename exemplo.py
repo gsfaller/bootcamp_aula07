@@ -100,3 +100,16 @@ resultado_desvio_padrao = calcular_desvio_padrao(valores_dp)
 
 print(resultado_desvio_padrao)
 
+# Encontrar valores ausentes em uma sequência
+sequencia = [1,2,3,4,5,6,7,8,12,15]
+
+def encontrar_valores_ausentes(sequencia: List[int]) -> List[int]:
+    """
+    O objetivo deste código é analisar uma sequência de números inteiros, será criado uma lista tomando como base o maior e o menor número, ou seja, se a lista tiver 5 argumentos, mas o primeiro for 1 e o último 15, será criada uma lista de 1 a 15 comparando com a lista fornecida para chegarmos aos números ausentes. 
+    """
+    completo = set(range(min(sequencia), max(sequencia) + 1))
+    return list(completo - set(sequencia))
+
+valores_ausentes = encontrar_valores_ausentes(sequencia)
+
+print(valores_ausentes)
